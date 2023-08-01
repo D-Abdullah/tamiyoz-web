@@ -1,0 +1,35 @@
+<div class="main-component">
+    <div class="col-lg-9 col-md-11 col-12 mt-5 mb-5 pe-lg-4">
+      <div class="section-title" data-aos="fade-down" data-aos-delay="0" data-aos-duration="500" data-aos-offset="-200"
+        data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+        data-aos-anchor-placement="top-center">
+        <span>{{'partners.title' | translate}}</span>
+        <p>{{'partners.Description' | translate}}</p>
+      </div>
+      <div class="partner-carousel" data-aos="fade-up" data-aos-delay="0"
+          data-aos-duration="500" data-aos-offset="-200" data-aos-easing="ease-in-out" data-aos-mirror="true"
+          data-aos-once="true"
+          data-aos-anchor-placement="top-center">
+          <owl-carousel-o [options]="customOptions">
+
+            <ng-container *ngFor="let partner of responseData">
+              <ng-template carouselSlide>
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="partner-block">
+                    <img [src]="imageUrl+partner.img">
+                  </div>
+                </div>
+                
+                <!-- <img src="{{partner.imgName}}"> -->
+              </ng-template>
+            </ng-container>
+
+          </owl-carousel-o>
+      </div>
+        
+        
+        
+
+    </div>
+
+</div>

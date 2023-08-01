@@ -1,0 +1,37 @@
+// // MEDIA QUERY BREAKING POINTS
+$small : 576px;
+$medium : 768px;
+$large : 992px;
+
+.read-more-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // margin: auto;
+            width: 145px;
+            height: 50px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            color: var(--primary-color);
+            // background-image: linear-gradient(#d6be75, #b58a40);
+            background-image: linear-gradient(-90deg,white,white ,rgb(181, 138, 64),#d6be75);
+            border: 1px solid var(--secondry-color);
+            background-size:300%;
+            background-position: 0 0;
+            transition: all 0.4s;
+            cursor: pointer;
+            &:hover {
+                background-position: 100% 0;
+                color: var(--blue-color);
+                border: 1px solid var(--blue-color);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25);
+            }
+            span {
+                font-size: 16px;
+                font-weight: 500;
+                
+            }
+        }

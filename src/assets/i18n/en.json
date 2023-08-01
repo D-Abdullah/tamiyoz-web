@@ -1,0 +1,130 @@
+{
+    "demo": {
+        "title": "Translation demo",
+        "text": "This is a simple demonstration app for ngx-translate"
+    },
+    "topsocial": {
+        "search-box-placeholder": "Type to Search..."
+    },
+    "search": {
+        "title": "What Are You Looking For...?",
+        "sub-title": "Tell us What You Are Looking For...",
+        "noresults": "No Results Found.",
+        "companies": "Companies",
+        "projects": "News",
+        "stations": "Projects"
+    },
+    "navbar": {
+        "Home": "Home",
+        "About_us": "About Us",
+        "Our_services": "Our Services",
+        "Our_opportunities": "Our Opportunities",
+        "Projects": "News",
+        "Stations": "Projects",
+        "Marketing": "Marketing",
+        "Contact_us": "Contact Us"
+    },
+    "head": {
+        "Title": "Tamiyoz Real Estate",
+        "Description": "Pioneers in Real Estate Marketing",
+        "Read_more": "Read More",
+        "showdetails": "Show Details"
+    },
+    "aboutus": {
+        
+        "Description": "Tamiyoz Real Estate is a Saudi entity licensed by the Ministry of Commerce, to market and manage real estate assets of all kinds (gas stations, commercial centers, residential development projects, etc.) and property management, and it specializes in the activities of integrated administrative services for offices. Excellence in Real Estate provides management consulting and integrated solutions in all support services. In addition to strategic development, in cooperation with strategic partners at the local and global levels, to implement all services according to the client's needs. We are proud to provide service to the public and private sectors." ,
+        "Vision": "Our Vision",
+        "Vision_text": "To be The First Choice for Investors and entrepreneurs at The Regional, Arab and Global Level.",
+        "Message": "Our Message",
+        "Message_text": "Striving to put an imprint in The Development of Projects and Investments, Also to Achieve The Highest Possible Returns.",
+        "Target": "Our Target",
+        "Target_text": "To be The First Choice for Investors and entrepreneurs at The Regional, Arab and Global Level."
+        
+    },
+    "ourservices": {
+        
+        "Description": "Services provided by The Company" ,
+        "ourservices1": "Online & Direct Marketing Services",
+        "ourservices2": "Residential and commercial real estate development projects",
+        "ourservices3": "Asset and property management"
+    },
+    "projects": {
+        "Description": "Projects We Have Completed" ,
+        "showall": "All Projects"
+    },
+    "partners":{
+        "title": "Our Partners",
+        "Description": "Partners of Success" 
+    },
+    "stats":{
+        "title": "Tamiyoz Real Estate By Numbers",
+        "stats1": "Completed projects",
+        "stats1number": "150",
+        "stats2": "Employee",
+        "stats2number": "300",
+        "stats3": "Current Clients",
+        "stats3number": "100",
+        "stats4": "Support Hours",
+        "stats4number": "80K"
+    },
+    "footer":{
+        "description": "Tamiyoz Real Estate is a Saudi entity licensed by the Ministry of Commerce, to market and manage real estate assets of all kinds (Gas Stations, Commercial Centers, Residential Development Projects)",
+        "bottomtext1": "All rights reserved to",
+        "bottomtext2": "Tamiyoz Real Estate",
+        "address": "Jeddah - Kingdom of Saudi Arabia - Headquarters Palestine Street",
+        "chat-bubble": "Chat with us"
+    },
+    "station":{
+        "location": "Location",
+        "downloadfile": "Download File",
+        "state1": "Available",
+        "state2": "Unavailable",
+        "reserve": "Reserve",
+        "modaltitle": "Reservation request",
+        "modaldescription": "We are pleased to receive your order",
+        "modalActivityType": "Commercial Registration (Required)",
+        "modalActivityType1": "Business Type (Required)",
+        "modalname": "Business Name (Required)",
+        "modalphone": "Phone Number (Required)",
+        "modalemail": "Email Address (Required)",
+        "modalpropertyname": "Enterprise Name",
+        "modalduration": "Tenancy Period / Year",
+        "modaltext": "Request Notes",
+        "modalcancel": "Cancel",
+        "modalsubmit": "Submit",
+        "modal-validation-name": "Please Enter Your Business Name.",
+        "modal-validation-phone": "Please Enter Your Phone Number.",
+        "modal-validation-duration": "Please Enter Tenancy Period.",
+        "modal-validation-propertyname": "Please Enter Enterprise Name.",
+        "modal-validation-email": "Please Enter Valid Email Address.",
+        "modal-validation-activity-type": "Please Enter Commercial Registration.",
+        "modal-validation-activity-type1": "Please Enter Business Type.",
+        "availableshops" : "Available Shops",
+        "map-modal-show-location": "Show Full Map",
+        "modal-terms" : "I agree to the terms and conditions.",
+        "modal-validation-terms": "You must agree with terms and conditions.",
+        "modal-tooltip-terms": "Learn about terms and conditions",
+        "show-available-shops": "Show Available Shops",
+        "show-all-stations": "Show All Projects",
+        "Choose Available Stations": "Choose Available Stations"
+    },
+    "contactus":{
+        "title": "Connect With Us",
+        "description": "We are glad to receive your messages",
+        "contactname": "Name",
+        "contactemail": "Email",
+        "contactphone": "Phone Number",
+        "contactmessage": "Your Message",
+        "contactsend": "Send Message"
+    },
+    "shop":{
+        "reservenow": "Reserve Now",
+        "reservestate1": "Shop is Available",
+        "reservestate2": "Shop is Unavailable"
+    },
+    "nocontent":{
+        "allopportunities": "No Opportunities Available For Now.",
+        "news": "No News Available For Now.",
+        "terms": "Terms & Conditions"
+    }
+}

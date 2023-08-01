@@ -1,0 +1,89 @@
+// MEDIA QUERY BREAKING POINTS
+$small : 576px;
+$medium : 768px;
+$large : 992px;
+
+.section-title-contact {
+    text-align: start;
+    font-weight: var(--bold);
+    @media only screen and (max-width: $small) {
+        // padding: 0 20px 0 0;
+        padding-inline-start: 20px;
+    }
+    span {
+        color: var(--blue-color);
+        font-size: 20px;
+    }
+    p {
+        color: black;
+        font-size: 30px;
+        margin: 10px 0 10px 0;
+        @media only screen and (max-width: $small){
+            font-size: 25px;
+        }
+    }
+
+}
+
+.contact-block {
+    display: flex;
+    .form-contact {
+        height: auto;
+        @media only screen and (max-width: $small) {
+            padding: 0 20px;
+        }
+        .form-single {
+            margin: 20px 0 0 0;
+            width: 90%;
+            // height: 60px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid rgb(224, 224, 224);
+            @media only screen and (max-width: $small) {
+                width: 100%;
+            }
+            input {
+                width: 100%;
+                height: 60px;
+                border: 0;
+                border-radius: 5px;
+                padding: 0 20px;
+                &::placeholder {
+                    font-size: 16px;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+            textarea {
+                width: 100%;
+                height: 120px;
+                border-radius: 5px;
+                resize: none;
+                padding: 20px;
+                border: 0;
+                &::placeholder {
+                    font-size: 16px;
+                }
+                &:focus {
+                    outline: none;
+                }
+
+            }
+            
+            
+        }
+    }
+    .background-contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 90%;
+            object-fit: cover;
+        }
+        @media only screen and (max-width: $small) {
+            display: none;
+        }
+    }
+}

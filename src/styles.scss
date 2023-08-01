@@ -1,0 +1,291 @@
+
+:root {
+    
+    --primary-color : white;
+    --secondry-color : #d6be76;
+    --secondry-dark-color : #3d2f13;
+    --blue-color : #0164ec;
+    --main-background-color : #f7f7f7;
+
+
+    // FONT WEIGHT
+    --bold: 600;
+    --medium-weight: 500;
+    --light-weight: 400;
+
+    --changa : 'Changa', sans-serif;
+
+    // MEDIA QUERY BREAKING POINTS
+    --small : 576px;
+    --medium : 768px;
+    --large : 992px;
+
+    // BOX SHADOW
+    --shadow-medium: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25);
+    --shadow-light: 0 0px 0px 0 rgba(0, 0, 0, 0.15), 0 6px 6px 0 rgba(0, 0, 0, 0.15);
+
+    --flex-center-all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+$primary-color : white;
+$secondry-color : #d6be76;
+$secondry-dark-color : #3d2f13;
+$blue-color : #0164ec;
+$main-background-color : #f7f7f7;
+
+
+// FONT WEIGHT
+$bold: 600;
+$medium-weight: 500;
+$light-weight: 400;
+
+$changa : 'Changa', sans-serif;
+
+// MEDIA QUERY BREAKING POINTS
+$small : 576px;
+$medium : 768px;
+$large : 992px;
+
+// BOX SHADOW
+$shadow-medium: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25);
+$shadow-light: 0 0px 0px 0 rgba(0, 0, 0, 0.15), 0 6px 6px 0 rgba(0, 0, 0, 0.15);
+
+
+@mixin flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-main-color {
+    background-color: $main-background-color;
+}
+
+body {
+    background-color: $main-background-color;
+    
+}
+
+ a, a:hover, a:focus, a:active {
+      all: unset;   
+ }
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // direction: rtl;
+    font-family: 'Changa', sans-serif;
+}
+
+.main-component {
+    width: 100%;
+    background-color: $main-background-color;
+    display: flex;
+    justify-content: center;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 600;
+    padding: 0 0 0 10px;
+    span {
+        color: $blue-color;
+        font-size: 20px;
+    }
+    p {
+        font-size: 40px;
+        margin: 10px 0 10px 0;
+        @media only screen and (max-width: $small){
+            font-size: 25px;
+        }
+    }
+
+}
+
+.showall-button {
+    width: 165px;
+    height: 50px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    // background-image: linear-gradient($blue-color ,#104286);
+    color: $primary-color;
+    background-image: linear-gradient(-90deg,white,white ,$blue-color,#104286);
+    border: 1px solid rgba($color: $blue-color, $alpha: 1);
+    background-size:300%;
+    background-position: 0 0;
+    transition: all 0.4s;
+    cursor: pointer;
+    @include flex-center-all();
+    &:hover {
+        background-position: 100% 0;
+        color: $blue-color;
+        border: 1px solid rgba($color: $blue-color, $alpha: 1);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25);
+    }
+    span {
+        font-size: 16px;
+        font-weight: 500;
+        
+    }
+}
+
+// HOME SLIDER CAROUSER
+
+
+
+// OWL CAROUSEL PARTNERS
+.partner-carousel .owl-next, .partner-carousel .owl-prev {
+    
+        // background-color: white !important;
+        color: $blue-color !important;
+        font-size: 35px !important;
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 30px !important;
+        border: 1px solid $blue-color !important;
+        position: relative;
+        background-image: linear-gradient(-90deg,$blue-color,#104286 ,white,white) !important;
+        background-size:300% !important;
+        background-position: 0 0 !important;
+        transition: all 0.2s !important;
+        &:hover {
+            background-position: 100% 0 !important;
+            color: $primary-color !important;
+            border: 1px solid rgba($color: $blue-color, $alpha: 1) !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25) !important;
+        }
+}
+.partner-carousel .owl-next i, .partner-carousel .owl-prev i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+        
+}
+
+
+// OWL CAROUSEL PROJECTS
+.project-carousel {
+    position: relative;
+}
+.project-carousel .owl-next, .project-carousel .owl-prev {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 35px !important;
+    color: $blue-color !important;
+    // background-color: white !important;
+    border-radius: 30px !important;
+    border: 1px solid $blue-color !important;
+    
+    // left: 50%;
+    background-image: linear-gradient(-90deg,$blue-color,#104286 ,white,white) !important;
+    background-size:300% !important;
+    background-position: 0 0 !important;
+    transition: all 0.2s !important;
+    &:hover {
+            background-position: 100% 0 !important;
+            color: $primary-color !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25) !important;
+        }
+}
+.project-carousel .owl-prev {
+    position: absolute;
+    right: 0;
+}
+.project-carousel .owl-next {
+    position: absolute;
+    right: 65px;
+}
+// .project-carousel .owl-prev {
+//     right: 0;
+//     transform: translate(-50%, -50%);
+// }
+
+.project-carousel .owl-next i, .project-carousel .owl-prev i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+//IMAGE SLIDER OWL CAROUSEL  PROJECTS
+.project-imgs-slider {
+    position: relative;
+}
+.project-imgs-slider .owl-next, .project-imgs-slider .owl-prev {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 35px !important;
+    color: $blue-color !important;
+    background-color: white !important;
+    border-radius: 30px !important;
+    border: 1px solid $blue-color !important;
+    
+    // left: 50%;
+    background-image: linear-gradient(-90deg,$blue-color,#104286 ,rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1)) !important;
+    background-size:300% !important;
+    background-position: 0 0 !important;
+    transition: all 0.2s !important;
+    &:hover {
+            background-position: 100% 0 !important;
+            color: $primary-color !important;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25) !important;
+        }
+}
+.project-imgs-slider .owl-prev {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.project-imgs-slider .owl-next {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+// .project-carousel .owl-prev {
+//     right: 0;
+//     transform: translate(-50%, -50%);
+// }
+
+.project-imgs-slider .owl-next i, .project-imgs-slider .owl-prev i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+
+
+
+
+
+
+
+.border-test {
+    border: 1px solid red;
+}
+.border-test1 {
+    border: 1px solid blue;
+}
+.border-test2 {
+    border: 1px solid green;
+}
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+

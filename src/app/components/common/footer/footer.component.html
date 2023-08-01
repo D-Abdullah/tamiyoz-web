@@ -1,0 +1,131 @@
+<div class="main-component footer-main">
+    <div class="col-lg-9 col-md-11 col-12 ps-md-4 d-flex flex-wrap">
+        <div class="col-sm-6 col-12 logo-side-footer">
+            <div class="col-12 logo-area text-center"
+              [ngClass]="direction == 'ltr' ? 'text-sm-start' : 'text-sm-end'">
+                <a href="/home">
+                    <img *ngIf="direction == 'rtl'" [src]="'assets/img/footer/logo-footer.png'" class="" alt="">
+                    <img *ngIf="direction == 'ltr'" [src]="'assets/img/footer/logo-footer-en.png'" class="" alt="">
+
+                </a>
+            </div>
+            <div class="col-md-10 description-area">
+                <p>
+                    {{'footer.description' | translate}}
+                </p>
+            </div>
+            <div class="col-12 social-links-circles">
+                <a href="{{responseData.facebook}}" target="_blank" *ngIf="responseData.facebook != ''">
+                    <div class="social-circle">
+                      <i class='bx bxl-facebook'></i>
+                    </div>
+                </a>
+                
+                <a href="{{responseData.twitter}}" target="_blank" *ngIf="responseData.twitter != ''">
+                    <div class="social-circle">
+                      <i class='bx bxl-twitter'></i>
+                    </div>
+                </a>
+                
+                <a href="{{responseData.linkedin}}" target="_blank" *ngIf="responseData.linkedin != ''">
+                    <div class="social-circle">
+                      <i class='bx bxl-linkedin'></i>
+                    </div>
+                </a>
+
+                <a href="tel:{{responseData.phone}}" target="_blank" *ngIf="responseData.phone != ''">
+                    <div class="social-circle">
+                      <i class='bx bxs-phone'></i>
+                    </div>
+                </a>
+                
+
+            </div>
+        </div>
+        <div class="col-sm-6 col-12 map-side-footer">
+            
+            <div class="contact-area">
+                <div class="contact-block col-12">
+                    <div class="contact-icon col-2">
+                        <i class='bx bxs-map'></i>
+                    </div>
+                    <div class="contact-info col-10">
+                        <span *ngIf="direction == 'rtl'">
+                            {{responseData.address}}
+                        </span>
+                        <span *ngIf="direction == 'ltr'">
+                            {{responseData.address_en}}
+                        </span>
+                    </div>
+                </div>
+                <div class="contact-block col-12" (click)="goToLink('mailto:'+responseData.site_email)">
+                    <div class="contact-icon col-2">
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    
+                    <div class="contact-info col-10">
+                        <span>
+                            {{responseData.site_email}}
+                        </span>
+                    </div>
+                </div>
+                <div class="contact-block col-12" (click)="goToLink('tel:'+responseData.phone)">
+                    <div class="contact-icon col-2">
+                        <i class='bx bxs-phone'></i>
+                    </div>
+                    <div class="contact-info col-10" >
+                        <span style="direction: ltr;">
+                            {{responseData.phone}}
+                        </span>
+                        <span style="direction: ltr;">
+                            {{responseData.other_phone}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+<div class="footer-bottom">
+    <div class="footer-block-bottom col-lg-9 col-md-11 col-12 ps-md-4">
+        <div class="rights-block">
+            <span>{{'footer.bottomtext1' | translate}}&nbsp;</span>
+            <span style="font-weight: 800;">
+                {{'footer.bottomtext2' | translate}}
+            </span>
+
+        </div>
+        <div class="powered-block" style="direction: rtl;">
+            
+            <a href="https://it-plus.co" target="_blank">
+                <img [src]="'assets/img/itplus.png'" class="" alt="">
+                <span>
+                    Powered By &nbsp;
+                </span>
+                
+            </a>
+            
+            
+        </div>
+    </div>
+    
+    
+
+</div>
+
+<div class="go-up-button" (click)="gotoTop()" [ngClass]="windowScrolled ? 'shown' : 'hidden' ">
+    <i class='bx bx-chevron-up'></i>
+</div>
+
+<!-- CONTACT BUBBLE CHAT BOT -->
+<div class="contact-bubble" *ngIf="chatBubble">
+    <div class="bubble">
+        
+        <span>{{'footer.chat-bubble' | translate}}</span>
+        <div class="close-bubble" (click)="chatBubble = false">
+          <i class='bx bx-x'></i>
+        </div>
+    </div>
+</div>

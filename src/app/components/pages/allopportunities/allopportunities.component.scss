@@ -1,0 +1,77 @@
+// MEDIA QUERY BREAKING POINTS
+$small : 576px;
+$medium : 768px;
+$large : 992px;
+
+@import "../../common/projects/projects.component.scss";
+
+
+
+.projects-main {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @media only screen and (max-width: $small) {
+        justify-content: center;
+    }
+    .project-block {
+        width: 220px;
+        height: 355px;
+        margin: 0;
+        margin-bottom: 20px;
+        margin-inline-end: 20px;
+        @media only screen and (max-width: $small) {
+            width: 95%;
+            margin-inline-end: 0;
+        }
+        
+        .text-block {
+            // padding: 10px 10px 0 10px;
+        }
+        .details-button {
+            position: absolute;
+            bottom: 0;
+            padding: 0 10px 10px 10px;
+            .showall-button {
+                width: 120px;
+                height: 35px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                // background-image: linear-gradient(var(--blue-color) ,#104286);
+                
+                background-image: linear-gradient(-90deg,white,white ,var(--blue-color),#104286);
+                border: 1px solid rgba($color: var(--blue-color), $alpha: 1);
+                background-size:300%;
+                background-position: 0 0;
+                transition: all 0.4s;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    background-position: 100% 0;
+                    color: var(--blue-color);
+                    border: 1px solid rgba($color: var(--blue-color), $alpha: 1);
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25);
+                }
+                &:hover span {
+                    color: var(--blue-color);
+                }
+                span {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: var(--primary-color);
+                    
+                    
+                }
+            }
+        }
+    }
+}
+
+.no-content {
+    color: red;
+    font-size: 24px;
+}

@@ -1,0 +1,75 @@
+<div class="navbar-menu-side" 
+    [ngClass]="isOpened ? 'animation-open' : 'animation-close' "
+    (clickOutside)="clickOutside()"
+    
+    >
+
+  <div class="navbar-menu-side-block">
+      <div class="col-12 sidemenu-logo">
+          <img [src]="'assets/img/logo-side-menu.png'" [routerLink]="['home']" alt="">
+      </div>
+      <div class="col-12 sidemenu-links-block">
+          <div class="sidemenu-link" [routerLink]="['home']">
+              
+              <span routerLinkActive="active">
+                  {{ 'navbar.Home' | translate }}
+              </span>
+
+          </div>
+          <div class="sidemenu-link" [routerLink]="['app-aboutuspage']">
+              
+              <span routerLinkActive="active">
+                  {{ 'navbar.About_us' | translate }}
+              </span>
+
+          </div>
+          <div class="sidemenu-link" [routerLink]="['ourservices']">
+             
+              <span routerLinkActive="active">
+                  {{ 'navbar.Our_services' | translate }}
+              </span>
+
+          </div>
+          <div class="sidemenu-link" [routerLink]="['allopportunities']">
+              <span routerLinkActive="active">
+                  {{ 'navbar.Our_opportunities' | translate }}
+              </span>
+          </div>
+          <div class="sidemenu-link" [routerLink]="['news']">
+              <span routerLinkActive="active">
+                  {{ 'navbar.Projects' | translate }}
+              </span>
+          </div>
+          <div class="sidemenu-link" [routerLink]="['projects']">
+              <span routerLinkActive="active">
+                  {{ 'navbar.Stations' | translate }}
+              </span>
+          </div>
+          <div class="sidemenu-link" [routerLink]="['marketing']">
+              <span routerLinkActive="active">
+                  {{ 'navbar.Marketing' | translate }}
+              </span>
+          </div>
+          <div class="sidemenu-link" [routerLink]="['contact']">
+              <span routerLinkActive="active">
+                  {{ 'navbar.Contact_us' | translate }}
+              </span>
+          </div>
+          <a>
+              <div class="sidemenu-link">
+                <span *ngIf="lang == 'ar'" (click)="changeLang('en')">English</span>
+                <span *ngIf="lang == 'en'" (click)="changeLang('ar')">عربي</span>
+              </div>
+          </a>
+          
+          
+          
+
+      </div>
+      
+  </div>
+
+  <div class="navbar-menu-button" (click)="showConsole()">
+    <i [ngClass]="isOpened ? 'bx-chevron-right' : 'bx-chevron-left' " class='bx '></i>
+  </div>
+</div>

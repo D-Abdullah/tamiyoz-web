@@ -1,0 +1,168 @@
+<div class="main-component">
+  <div class="col-md-11 col-lg-9 col-12 mt-5 mb-5 d-flex flex-wrap">
+    <div class="col-lg-9 col-12 article-main">
+
+      <div class="project-imgs-slider">
+        <owl-carousel-o [options]="projectImgsOptions">
+
+          <ng-container *ngFor="let image of responseData.images">
+            <ng-template carouselSlide>
+              <div class="img-block">
+                <img [src]="imageUrl+image.img" alt="">
+              </div>
+            </ng-template>
+          </ng-container>
+
+          <!-- <ng-container>
+                <ng-template carouselSlide>
+                  <div class="img-block">
+                    <img src="https://tamiyoz.com/api/uploads/shops/ba12157bb2.png" alt="">
+                  </div>
+                </ng-template>
+              </ng-container>
+
+              <ng-container>
+                <ng-template carouselSlide>
+                  <div class="img-block">
+                    <img src="https://tamiyoz.com/api/uploads/shops/e8636fb624.png" alt="">
+                  </div>
+                </ng-template>
+              </ng-container> -->
+
+        </owl-carousel-o>
+      </div>
+
+      <div class="img-main" *ngIf="!responseData.images">
+        <img [src]="imageUrl+responseData.img" alt="">
+      </div>
+
+
+      <div class="text-article">
+        <div class="text-box-main">
+          <span>
+            {{responseData.name}}
+          </span>
+          <p [innerHtml]="responseData.description"></p>
+        </div>
+
+        <!-- <div class="text-box-side">
+          <span>الموقع</span>
+          <p>
+            تتميز أبراج الواحة بموقعها بين شارع محمد بن عبدالعزيز (التحلية سابقا) وشارع فلسطين وكذلك بالقرب
+            من طريق الحرمين الرابط بين كافة احياء جدة ولما لهذه الشوارع من أهمية وكونهما احد اهم الطرق
+            الرئيسية لمدينة جدة كما يتميز الموقع بمنظومة مكتملة من الخدمات التي تلبي احتياجات الاسر اليومية
+          </p>
+        </div> -->
+        
+
+        
+      </div>
+    </div>
+    <div class="col-lg-3 col-12 location-main">
+      <div class="location-block" *ngIf="responseData.lon !== '' && responseData.lat !== '' ">
+        <div class="location-block-title">
+          <span>
+            {{'station.location' | translate}}
+          </span>
+        </div>
+        <a (click)="openMap(mapModal)">
+          <div class="location-block-map" id="map">
+          </div>
+        </a>
+        
+        
+
+        
+
+      </div>
+      <div class="contact-area">
+        <div class="contact-block col-12" *ngIf="responseData.address">
+          <div class="contact-icon col-2">
+            <i class='bx bxs-map'></i>
+          </div>
+          <div class="contact-info col-10">
+            <span>
+              {{responseData.address}}
+            </span>
+          </div>
+        </div>
+        <div class="contact-block col-12" *ngIf="responseData.websiteUrl">
+          <div class="contact-icon col-2">
+            <i class='bx bx-globe'></i>
+          </div>
+          
+          <div class="contact-info col-10"  (click)="goToLink(responseData.websiteUrl)">
+            <span style="direction: ltr;">
+              {{responseData.websiteUrl}}
+            </span>
+          </div>
+          
+          
+        </div>
+        <div class="contact-block col-12" *ngIf="responseData.email">
+          <div class="contact-icon col-2">
+            <i class='bx bxs-envelope'></i>
+          </div>
+          <div class="contact-info col-10">
+            <span>
+              {{responseData.email}}
+            </span>
+          </div>
+        </div>
+        <div class="contact-block col-12" *ngIf="responseData.phones.length != 0">
+          <div class="contact-icon col-2">
+            <i class='bx bxs-phone'></i>
+          </div>
+          <div class="contact-info col-10">
+
+            <span  *ngFor="let phone of responseData.phones">
+              {{phone.phone_number}}
+            </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #mapModal let-modal>
+
+  <div class="modal-map-container" [style.direction]="direction">
+
+    <div class="modal-title-main">
+
+      <span *ngIf="direction == 'rtl'">
+        موقع {{responseData.name}}
+      </span>
+      <span *ngIf="direction == 'ltr'">
+        {{responseData.name}}'s Location
+      </span>
+      <div class="close-button" (click)="modal.close('Ok click')">
+        <i class='bx bx-x'></i>
+      </div>
+    </div>
+
+
+    <div class="modal-map" id="mapModal">
+    </div>
+    <!-- <a href="https://www.google.com/maps/search/?api=1&query={{responseData.lat}},{{responseData.lon}}" target="_blank">
+    </a> -->
+
+    <div class="modal-map-footer">
+      <a href="https://www.google.com/maps/search/?api=1&query={{responseData.lat}},{{responseData.lon}}"
+        target="_blank">
+        <div class="showall-button">
+          <span>{{"station.map-modal-show-location" | translate}}</span>
+        </div>
+      </a>
+
+    </div>
+
+
+
+  </div>
+</ng-template>
+
+
+

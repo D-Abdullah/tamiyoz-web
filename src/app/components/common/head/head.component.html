@@ -1,0 +1,79 @@
+
+<div class="w-100 slide-main" [ngClass]="{'home-active': homeCheck == true, 'home-notactive' : homeCheck == false }"
+>
+    <div class="home-slider" [style.display]=" homeCheck== false ? 'none' : 'block'">
+        <owl-carousel-o [options]="sliderOptions">
+            <ng-container *ngFor="let slider of responseData">
+                
+              <ng-template carouselSlide >
+
+                <div class="center-heading col-9" [style.direction] = "direction"
+                  [style.display]=" homeCheck== false ? 'none' : 'block'">
+                  <h1>{{slider.description }}</h1>
+                  <h2>{{slider.description_2}}</h2>
+                  <div class="read-more">
+                    <a href="{{slider.url}}">
+                      <app-readmorebutton></app-readmorebutton>
+                    </a>
+
+                  </div>
+
+                </div>
+                
+                <img [src]="imageUrl+slider.img" alt="{{slider.name}}">
+                
+              </ng-template>
+              
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+    
+      
+    <div class="top-header-content">
+        <app-navbarsidemenu></app-navbarsidemenu>
+        <app-topsocial></app-topsocial>
+        <app-navbar></app-navbar>
+    </div>
+    
+    
+
+    <div class="nav-title col-lg-9 col-md-11 col-12" [style.display]=" homeCheck==false ? 'block' : 'none'"
+      [ngClass]="direction == 'ltr' ? 'nav-title-en-mobile' : 'nav-title-ar-mobile'" [style.margin] = "longTitle1 ?
+      '230px auto 0' : '300px auto 0'">
+        <div class="main-nav-title">
+            <span>{{headerTextMain}}</span>
+        </div>
+        <div class="bottom-nav-title">
+            <div class="first-nav-title">
+                <a [routerLink]="['home']">
+                    <span>
+                      {{'navbar.Home' | translate}}
+                      &nbsp;>
+                    </span>
+                </a>
+            </div>
+            <div class="second-nav-title">
+                <a [routerLink]="[headerTextLink]">
+                    &nbsp;
+                    <span>{{headerText}}</span>
+                </a>
+                
+            </div>
+            <div class="second-nav-title">
+                <a [routerLink]="[headerSubTextLink]">
+                    &nbsp;
+                    <span>{{headerSubText}}</span>
+                </a>
+            </div>
+            <div class="second-nav-title">
+                <a [routerLink]="[headerAfterSubTextLink]">
+                    &nbsp;
+                    <span>{{headerAfterSubText}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>

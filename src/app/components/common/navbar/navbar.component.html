@@ -1,0 +1,108 @@
+<div class="navbar-main">
+    <div class="col-md-9 col-12 navbar-container d-flex">
+        <div class="main-logo col-2">
+            <a href="/home">
+                <img *ngIf="direction == 'rtl'" [src]="'assets/img/home/logo.png'" class="" alt="">
+                <img *ngIf="direction == 'ltr'" [src]="'assets/img/home/logo-en.png'" class="" alt="">
+            </a>
+        </div>
+
+        <div class="navbar-links col-10">
+          <a [routerLink]="['home']" class="navbar-button">
+            <div>
+
+              <span routerLinkActive="active">
+                {{ 'navbar.Home' | translate }}
+              </span>
+
+
+            </div>
+          </a>
+
+          <a class="navbar-button" [routerLink]="['app-aboutuspage']">
+            <div>
+
+              <span routerLinkActive="active">
+                {{ 'navbar.About_us' | translate }}
+              </span>
+
+            </div>
+          </a>
+
+          <a class="navbar-button" [routerLink]="['ourservices']">
+            <div>
+
+              <span routerLinkActive="active">
+                {{ 'navbar.Our_services' | translate }}
+              </span>
+
+
+            </div>
+          </a>
+
+          <a class="navbar-button" [routerLink]="['allopportunities']">
+            <div>
+
+              <span routerLinkActive="active">
+                {{ 'navbar.Our_opportunities' | translate }}
+              </span>
+
+
+            </div>
+          </a>
+            
+          <a class="navbar-button" [routerLink]="['news']">
+            <div>
+
+              <span routerLinkActive="active">
+                {{ 'navbar.Projects' | translate }}
+              </span>
+
+            </div>
+          </a>
+            
+            
+          <a class="navbar-button" [routerLink]="['projects']">
+            <div>
+
+              <span routerLinkActive="active">
+                {{ 'navbar.Stations' | translate }}
+              </span>
+
+
+            </div>
+          </a>
+            
+          <a class="navbar-button" [routerLink]="['marketing']">
+            <div>
+
+              <span routerLinkActive="active">
+                {{ 'navbar.Marketing' | translate }}
+              </span>
+
+
+            </div>
+          </a>
+
+          <a class="navbar-button" [routerLink]="['contact']">
+            <div>
+
+              <span routerLinkActive="active">
+                {{ 'navbar.Contact_us' | translate }}
+              </span>
+
+
+            </div>
+          </a>
+            
+            
+            <!-- <div class="navbar-button">
+                <i class='bx bx-search'></i>
+            </div> -->
+            
+        </div>
+
+    </div>
+</div>
+
+

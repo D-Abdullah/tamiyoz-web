@@ -1,0 +1,90 @@
+<div class="main-component">
+    <div class="col-md-11 col-lg-9 col-12 mt-5 mb-5">
+        <div class="section-title"
+          data-aos="fade-down" data-aos-delay="0" data-aos-duration="500" data-aos-offset="-200"
+          data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+          data-aos-anchor-placement="top-center">
+            <span>{{'navbar.Our_services' | translate}}</span>
+            <p>{{'ourservices.Description' | translate}}</p>
+        </div>
+        <!-- <div class="section-title" >
+            <span>خدمتنا</span>
+            <p>الخدمات التي تفدمها الشركة</p>
+        </div> -->
+        <div class="services-main">
+            <div routerLink="/single-service/{{service.id}}" *ngFor="let service of responseData"
+              class="col-sm-6 col-md-3 col-lg-3 col-12"
+              data-aos="zoom-in" data-aos-delay="0" data-aos-offset="-200"
+              data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+              data-aos-anchor-placement="top-center">
+                <div class="services-block pt-lg-5 pt-md-4 justify-content-md-start justify-content-center">
+                  <div class="overlay-services-block">
+
+                  </div>
+                  <div class="services-icon-main">
+                    <img *ngIf="service.name.trim() === 'خدمات الوسيط العقاري'  ||service.name.trim() === 'Real estate development projects'" [src]="'assets/img/ourservices/services1.png'" alt="">
+                    <img *ngIf="service.name.trim() === 'إدارة الأصول والأملاك'  ||service.name.trim() === 'marketing'" [src]="'assets/img/ourservices/services4.png'" alt="">
+                    <img *ngIf="service.name.trim() === 'التسويق' || service.name.trim() === 'Asset and property management'" [src]="'assets/img/ourservices/services2.png'" alt="">
+                    <img *ngIf="service.name.trim() === 'مشاريع التطوير العقاري' ||service.name.trim() ===  'Real estate broker services'" [src]="'assets/img/ourservices/services3.png'" alt="">
+                  </div>
+                  <span>{{service.name}}</span>
+                </div>
+            </div>
+            <!-- <div [routerLink]="['/single-service']"
+              class="col-sm-6 col-md-3 col-lg-3 col-12" data-aos="zoom-in"
+
+              data-aos-delay="0"
+              data-aos-duration="500" data-aos-offset="-200" data-aos-easing="ease-in-out" data-aos-mirror="true"
+              data-aos-once="true"
+              data-aos-anchor-placement="top-center">
+                <div class="services-block pt-lg-5 pt-md-4 justify-content-md-start justify-content-center">
+                  <div class="overlay-services-block"></div>
+                  <div class="services-icon-main">
+                    <img [src]="'assets/img/ourservices/services2.png'" alt="">
+                  </div>
+                  <span>
+                      {{'ourservices.ourservices2' | translate}}
+                  </span>
+                </div>
+
+            </div>
+            <div [routerLink]="['/single-service']"
+              class="col-sm-6 col-md-3 col-lg-3 col-12" data-aos="zoom-in"
+
+              data-aos-delay="0"
+              data-aos-duration="500" data-aos-offset="-200" data-aos-easing="ease-in-out" data-aos-mirror="true"
+              data-aos-once="true"
+              data-aos-anchor-placement="top-center">
+                <div class="services-block pt-lg-5 pt-md-4 justify-content-md-start justify-content-center">
+                  <div class="overlay-services-block"></div>
+                  <div class="services-icon-main">
+                    <img [src]="'assets/img/ourservices/services3.png'" alt="">
+                  </div>
+                  <span>{{'ourservices.ourservices3' | translate}}</span>
+                </div>
+            </div>
+            <div [routerLink]="['/single-service']"
+              class="col-sm-6 col-md-3 col-lg-3 col-12" data-aos="zoom-in"
+
+              data-aos-delay="0"
+              data-aos-duration="500" data-aos-offset="-200" data-aos-easing="ease-in-out" data-aos-mirror="true"
+              data-aos-once="true"
+              data-aos-anchor-placement="top-center">
+                <div class="services-block pt-lg-5 pt-md-4 justify-content-md-start justify-content-center">
+                  <div class="overlay-services-block"></div>
+                  <div class="services-icon-main">
+                    <img [src]="'assets/img/ourservices/services1.png'" alt="">
+                  </div>
+                  <span>{{'ourservices.ourservices1' | translate}}</span>
+                </div>
+            </div> -->
+
+
+
+
+
+        </div>
+
+    </div>
+
+</div>

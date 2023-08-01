@@ -1,0 +1,84 @@
+// MEDIA QUERY BREAKING POINTS
+$small : 576px;
+$medium : 768px;
+$large : 992px;
+
+$navbar-height : 83px;
+
+
+
+.navbar-main {
+    font-weight: 500;
+    
+    width: 100%;
+    height: $navbar-height;
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: $medium) {
+  
+        display: none;
+    }
+    .navbar-container {
+        @media only screen and (max-width: 980px){
+            width: 90%;
+        }
+    }
+    .main-logo {
+        height: 100%;
+        img {
+            cursor: pointer;
+            // width: 149px;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+    }
+    .navbar-links {
+        display: flex;
+        justify-content: space-between;
+        
+        
+
+        
+        .navbar-button {
+            display: flex;
+            align-items: center;
+            color: white;
+            transition: all 0.4s;
+            // border: 1px solid red;
+            &:hover {
+                color: var(--secondry-color);
+                
+            }
+            &:hover span {
+                
+            }
+            span {
+                cursor: pointer;
+                // transition: all 0.4s;
+                // box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+            }
+            
+            i {
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+        }
+        
+    }
+}
+
+// ROUTER ACTIVE STYLE
+.active {
+    color: var(--secondry-color);
+}
+
+
+
+
+
+
+
+
+

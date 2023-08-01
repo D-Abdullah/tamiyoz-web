@@ -1,0 +1,187 @@
+// MEDIA QUERY BREAKING POINTS
+$small : 576px;
+$medium : 768px;
+$large : 992px;
+
+
+
+
+.article-main {
+    background-color: white;
+    box-shadow: var(--shadow-medium);
+    min-height: 677px;
+    .img-main {
+        width: 100%;
+        @media only screen and (max-width: $small) {
+            padding: 30px 30px 0;
+        }
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .text-article {
+        width: 100%;
+        padding: 30px;
+        .text-box-main {
+            
+            span {
+                color: var(--blue-color);
+                font-size: 40px;
+                font-weight: var(--bold);
+                display: block;
+                margin: 0 0 20px 0;
+                
+            }
+            p {
+                color: black;
+                font-size: 16px;
+                font-weight: var(var(--medium-weight));
+                line-height: 28px;
+            }
+        }
+        .text-box-side {
+            // padding: 30px;
+            margin: 30px 0 0 0;
+            span {
+                color: black;
+                font-size: 24px;
+                font-weight: var(--bold);
+                display: block;
+                margin: 0 0 20px 0;
+                
+            }
+            p {
+                color: black;
+                font-size: 16px;
+                font-weight: var(var(--medium-weight));
+                line-height: 28px;
+            }
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+            .projects-main {
+                display: flex;
+justify-content: center;
+align-items: center;
+                .project-block {
+                    //width: 235px;
+                    // padding: 10px 10px 0 10px;
+                    width: 234px;
+                    margin: 20px;
+                    height: 332px;
+                    background-color: white;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 8px 0 rgba(0, 0, 0, 0.25);
+
+                    position: relative;
+
+                    cursor: pointer;
+
+                    transition: all 0.4s;
+
+                    &:hover span, &:hover p{
+                        color: white;
+                    }
+                    &:hover img{
+                        height: 100%;
+                        padding: 0;
+                        filter: brightness(40%);
+                    }
+                    &:hover {
+                        padding: 0;
+                    }
+
+                    
+                    img {
+                        // width: 205px;
+                        padding: 10px 10px 0 10px;
+                        width: 100%;
+                        height: 205px;
+                        border-radius: 10px;
+                        -webkit-border-radius: 10px;
+                        -moz-border-radius: 10px;
+                        -ms-border-radius: 10px;
+                        -o-border-radius: 10px;
+                        margin-bottom: 0px;
+                        object-fit: cover;
+                        transition: all 0.4s;
+                    }
+                    .text-block {
+                        position: absolute;
+                        top: 210px;
+                        padding: 0px 10px 0 10px;
+                    }
+                    span {
+                        font-weight: 600;
+                        font-size: 16px;
+                        color: var(--blue-color);
+                        transition: all 0.4s;
+                        margin: 0;
+                        
+                        
+                    }
+                    p {
+                        padding-top: 0px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #222222;
+                        transition: all 0.4s;
+                    
+
+                    }
+                    .reserve-buttons {
+                        position: absolute;
+                        bottom: 0;
+                        z-index: 1;
+                        display: flex;
+                        width: 100%;
+                        padding: 0 10px 10px 10px;
+                        
+                        justify-content: space-between;
+                        .reserve-stats {
+                            width: 80px;
+                            height: 30px;
+                            background-color: rgb(245, 245, 245);
+                            border-radius: 5px;
+                            display: flex;
+justify-content: center;
+align-items: center;
+                            span {
+                                color: #222222;
+                                font-size: 14px;
+                                font-weight: var(--light-weight);
+                            }
+                        }
+                        
+                        .reserve-now {
+                            width: 80px;
+                            height: 30px;
+                            // background-color: var(--blue-color);
+                            border-radius: 5px;
+                            background-image: linear-gradient(-90deg ,var(--blue-color),#104286);
+                            display: flex;
+justify-content: center;
+align-items: center;
+                            span {
+                                color: white;
+                                font-size: 14px;
+                                font-weight: var(--light-weight);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+

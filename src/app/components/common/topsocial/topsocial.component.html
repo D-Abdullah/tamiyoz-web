@@ -1,0 +1,112 @@
+<div class="topsocial-links">
+  <div class="col-md-9 col-12 d-flex justify-content-between social-container">
+
+    <div class="social-list col-6 ">
+      <a href="{{responseData.youtube}}" target="_blank" *ngIf="responseData.youtube">
+        <div class="social-icon-box">
+          <i class='bx bxl-youtube'></i>
+        </div>
+      </a>
+
+      <a href="{{responseData.tiktok}}" target="_blank" *ngIf="responseData.tiktok">
+        <div class="social-icon-box">
+          <i class='bx bxl-tiktok'></i>
+        </div>
+      </a>
+
+      <a href="{{responseData.linkedin}}" target="_blank" *ngIf="responseData.linkedin">
+        <div class="social-icon-box">
+          <i class='bx bxl-linkedin-square'></i>
+        </div>
+      </a>
+      <a [href]="'https://wa.me/' + responseData.phone.substring(1)" target="_blank"
+        *ngIf="responseData.phone">
+        <div class="social-icon-box">
+          <i class='bx bxl-whatsapp'></i>
+        </div>
+      </a>
+
+      <a href="{{responseData.instagram}}" target="_blank" *ngIf="responseData.instagram">
+        <div class="social-icon-box">
+          <i class='bx bxl-instagram'></i>
+        </div>
+      </a>
+
+      <a href="{{responseData.twitter}}" target="_blank" *ngIf="responseData.twitter">
+        <div class="social-icon-box">
+          <i class='bx bxl-twitter'></i>
+        </div>
+      </a>
+      <a href="{{responseData.facebook}}" target="_blank" *ngIf="responseData.facebook">
+        <div class="social-icon-box">
+          <i class='bx bxl-facebook'></i>
+        </div>
+      </a>
+
+    </div>
+
+
+    <div class="lang-button col-6">
+
+      <span *ngIf="lang == 'ar'" (click)="changeLang('en')">English</span>
+      <span *ngIf="lang == 'en'" (click)="changeLang('ar')">عربي</span>
+
+
+      <div *ngIf="lang == 'ar'" (clickOutside)="clickOutsideTopSearch()"
+        [ngClass]="topSearchBarOpen == true ? 'search-box' : 'search-box-off'">
+        <div class="search-icon" (click)="topSearchBarOpenToggle()">
+          <i class='bx bx-search'></i>
+        </div>
+        <input type="text" [(ngModel)]="searchName" class="border-test2" (keyup.enter)="searchEnterKey()"
+          placeholder="{{'topsocial.search-box-placeholder' | translate}}">
+
+        <div class="submit-search-box" (click)="searchEnterKey()">
+          <i class='bx bx-chevron-left'></i>
+        </div>
+
+
+      </div>
+
+
+      <div *ngIf="lang == 'en'" (clickOutside)="clickOutsideTopSearch()"
+        [ngClass]="topSearchBarOpen == true ? 'search-box-en' : 'search-box-off-en'">
+        <div class="search-icon" (click)="topSearchBarOpenToggle()">
+          <i class='bx bx-search'></i>
+        </div>
+        <input type="text" [(ngModel)]="searchName" class="border-test2" (keyup.enter)="searchEnterKey()"
+          placeholder="{{'topsocial.search-box-placeholder' | translate}}">
+
+          <div class="submit-search-box" (click)="searchEnterKey()">
+            <i class='bx bx-chevron-right'></i>
+          </div>
+
+
+      </div>
+
+
+
+      <div class="search-box-mobile" (clickOutside)="clickOutside()">
+        <i class='bx bx-search' (click)="toggleSearchBox()"></i>
+        <div class="search-box-bar-mobile"
+          [ngClass]="lang == 'ar' ? 'search-box-bar-mobile-ar' : 'search-box-bar-mobile-en'"
+          [ngClass]="searchBoxOpen == true ? 'search-bar-open' : 'search-bar-close'"
+          >
+
+          <div class="submit-search-button" (click)="searchEnterKey()">
+            <i class='bx bxs-chevron-right'></i>
+          </div>
+
+
+          <div class="input-search-form">
+            <input type="text" [(ngModel)]="searchName" (keyup.enter)="searchEnterKey()"
+              placeholder="{{'topsocial.search-box-placeholder' | translate}}">
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

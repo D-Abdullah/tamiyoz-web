@@ -1,0 +1,308 @@
+<div class="main-component">
+    <div class="col-md-11 col-lg-9 col-12 mt-5 mb-5 d-flex flex-wrap">
+        <div class="col-lg-9 col-12 article-main">
+
+          <div class="project-imgs-slider">
+            <owl-carousel-o [options]="projectImgsOptions">
+
+              <ng-container *ngFor="let image of responseData.images">
+                <ng-template carouselSlide>
+                  <div class="img-block">
+                    <img [src]="imageUrl+image.img"
+                      alt="">
+                  </div>
+                </ng-template>
+              </ng-container>
+
+              <!-- <ng-container>
+                <ng-template carouselSlide>
+                  <div class="img-block">
+                    <img src="https://tamiyoz.com/api/uploads/shops/ba12157bb2.png" alt="">
+                  </div>
+                </ng-template>
+              </ng-container>
+
+              <ng-container>
+                <ng-template carouselSlide>
+                  <div class="img-block">
+                    <img src="https://tamiyoz.com/api/uploads/shops/e8636fb624.png" alt="">
+                  </div>
+                </ng-template>
+              </ng-container> -->
+
+            </owl-carousel-o>
+          </div>
+          
+
+
+
+          <div class="img-main" *ngIf="!responseData.images">
+              <img [src]="imageUrl+responseData.img" alt="">
+          </div>
+          <div class="text-article">
+              <div class="text-box-main">
+                  <span>
+                    {{responseData.name}}
+                  </span>
+                  <p [innerHtml]="responseData.description"></p>
+              </div>
+              
+
+              <div class="text-box-side" *ngIf="responseDataShops.length !== 0">
+                <span>
+                  {{'station.availableshops' | translate}}
+                </span>
+
+
+                <div class="partner-carousel" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-200"
+                  data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+                  data-aos-anchor-placement="top-center" style="position: relative;">
+                  <owl-carousel-o [options]="projectOptions">
+
+                    <ng-container *ngFor="let shop of responseDataShops">
+                      <ng-template carouselSlide>
+                        <div class="projects-main" [style.direction]="direction">
+                          <div class="project-block " >
+                            <img [src]="imageShopUrl+shop.img" alt="" routerLink="/shop/{{shop.id}}">
+                            <div class="text-block">
+                              <span routerLink="/shop/{{shop.id}}">
+                                {{shop.name}}
+                              </span>
+                              <p routerLink="/shop/{{shop.id}}">
+                                {{shop.description  |  truncate : 50 }}
+                              </p>
+                            </div>
+                            <div class="reserve-buttons">
+                                <div class="reserve-stats" routerLink="/shop/{{shop.id}}"
+                                  [ngClass]="shop.rented == '0' ? 'reserve-stats-0' : 'reserve-stats-1'">
+                                    <span *ngIf="shop.rented == '1'">
+                                      {{'station.state2' | translate}}
+                                    </span>
+                                    <span *ngIf="shop.rented == '0'">
+                                      {{'station.state1' | translate}}
+                                    </span>
+                                    
+                                </div>
+                                <div *ngIf="shop.rented == '0'" class="reserve-now" (click)="open(content, shop.name, shop.id)">
+                                  <span>{{'station.reserve' | translate}}</span>
+                                </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </ng-template>
+                    </ng-container>
+                  </owl-carousel-o>
+                  
+                </div>
+              </div>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-3 col-12 location-main">
+            <div class="location-block" *ngIf="responseData.lon !== '' && responseData.lat !== '' && responseData.stationFile !== '' ">
+                <div class="location-block-title">
+                    <span>
+                      {{'station.location' | translate}}
+                    </span>
+                </div>
+                
+                
+                <div (click)="openMap(mapModal)" *ngIf="responseData.lon !== '' && responseData.lat !== ''"
+                  class="location-block-map" id="map">
+                  <!-- <iframe
+                    [src]="map_url"
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                  </iframe> -->
+                </div>
+                
+                
+                <a *ngIf="responseData.stationfile" href="{{fileUrl+responseData.stationfile}}" target="_blank">
+                  <div class="location-file">
+                    <div class="file-text">
+                      <i class='bx bx-file'></i>
+                      &nbsp;
+                      <span>
+                        {{'station.downloadfile' | translate}}
+                      </span>
+                    </div>
+                    <div class="file-icon">
+                      <i class='bx bxs-download'></i>
+                    </div>
+                  </div>
+                </a>
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+  <div class="modal1" [style.direction]="direction">
+    <div class="modal-header1">
+      <div class="modal-title-main">
+
+        <span>
+          {{'station.modaltitle' | translate}}
+        </span>
+        <div class="close-button" (click)="modal.close('Ok click')">
+          <i class='bx bx-x'></i>
+        </div>
+      </div>
+      <div class="modal-title-description">
+        <span>
+          {{'station.modaldescription' | translate}}
+        </span>
+      </div>
+    </div>
+    <form [formGroup]="formValue">
+      <div class="modal-body1">
+
+        <div class="form-single">
+          <input type="text" value="{{propertyName}}" formControlName="propertyname" placeholder="{{'station.modalpropertyname' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalPropertyNameIsValid == false">
+          {{'station.modal-validation-propertyname' | translate}}
+        </span>
+
+        <div class="form-single">
+          <input type="number" formControlName="duration" placeholder="{{'station.modalduration' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalDurationIsValid == false">
+          {{'station.modal-validation-duration' | translate}}
+        </span>
+
+        <div class="form-single">
+          <input type="text" formControlName="registration_no"
+            placeholder="{{'station.modalActivityType' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalRegistrationNoIsValid == false">
+          {{'station.modal-validation-activity-type' | translate}}
+        </span>
+
+
+        <div class="form-single">
+          <input type="text" formControlName="activityType" placeholder="{{'station.modalActivityType1' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalActivityTypeIsValid == false">
+          {{'station.modal-validation-activity-type1' | translate}}
+        </span>
+        
+
+        <div class="form-single">
+          <input type="text" formControlName="name" placeholder="{{'station.modalname' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;"
+          *ngIf=" modalNameIsValid == false">
+          {{'station.modal-validation-name' | translate}}
+        </span>
+
+
+        <div class="form-single phone-number">
+          <input type="number" formControlName="phone" placeholder="{{'station.modalphone' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;"
+          *ngIf=" modalPhoneIsValid == false">
+          {{'station.modal-validation-phone' | translate}}
+        </span>
+
+        <div class="form-single">
+          <input type="email" formControlName="email" placeholder="{{'station.modalemail' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalEmailIsValid == false">
+          {{'station.modal-validation-email' | translate}}
+        </span>
+
+
+        <div class="form-wide">
+          <textarea type="text" formControlName="comment" placeholder="{{'station.modaltext' | translate}}"></textarea>
+        </div>
+
+        <div class="form-checkbox">
+          <input type="checkbox" id="terms" formControlName="terms" value="Bike">
+          <label for="terms">{{'station.modal-terms' | translate}}</label><br>
+          
+          <div class="terms-goto">
+            <a href="/terms" target="_blank" style="cursor: pointer;">
+              <i class='bx bxs-error-circle' placement="top" ngbTooltip="{{'station.modal-tooltip-terms' | translate}}">
+              </i>
+            </a>
+            
+          </div>
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalTermsIsValid == false">
+          {{'station.modal-validation-terms' | translate}}
+        </span>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+      <div class="modal-footer1">
+        <div class="showall-button" (click)="checkModalValidation()">
+          <span>
+            {{'station.modalsubmit' | translate}}
+          </span>
+        </div>
+        <div class="cancel-modal-button border-test2" (click)="modal.close('Ok click')">
+          <span>
+            {{'station.modalcancel' | translate}}
+          </span>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</ng-template>
+
+
+<ng-template #mapModal let-modal>
+  
+  <div class="modal-map-container" [style.direction]="direction">
+    
+    <div class="modal-title-main">
+
+      <span *ngIf="direction == 'rtl'">
+        موقع {{responseData.name}}
+      </span>
+      <span *ngIf="direction == 'ltr'">
+        {{responseData.name}}'s Location
+      </span>
+      <div class="close-button" (click)="modal.close('Ok click')">
+        <i class='bx bx-x'></i>
+      </div>
+    </div>
+      
+    
+    <div class="modal-map" id="mapModal">
+    </div>
+    <!-- <a href="https://www.google.com/maps/search/?api=1&query={{responseData.lat}},{{responseData.lon}}" target="_blank">
+    </a> -->
+
+    <div class="modal-map-footer">
+      <a href="https://www.google.com/maps/search/?api=1&query={{responseData.lat}},{{responseData.lon}}" target="_blank">
+        <div class="showall-button">
+          <span>{{"station.map-modal-show-location" | translate}}</span>
+        </div>
+      </a>
+      
+    </div>
+    
+    
+
+  </div>
+</ng-template>
+

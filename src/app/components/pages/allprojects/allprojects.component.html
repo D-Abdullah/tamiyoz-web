@@ -1,0 +1,25 @@
+<div class="main-component" style="background-color: #f7f7f7;">
+    <div class="col-md-11 col-lg-9 col-12 mt-5">
+      <div class="no-content" *ngIf="responseData.length == 0">
+        <span>
+          {{'nocontent.news' | translate}}
+        </span>
+      </div>
+      <div class="projects-main">
+        <div class="project-block" routerLink="/news-page/{{project.id}}"
+          *ngFor="let project of responseData" data-aos="fade-up" data-aos-offset="-200"
+          data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true"
+          data-aos-once="true" data-aos-anchor-placement="top-center">
+          <img [src]="imageUrl+project.img" alt="">
+          <div class="text-block">
+            <span>{{project.name |  truncate : 40}}</span>
+            <p>
+              {{project.description |  truncate : 55 }}
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+<app-partners></app-partners>

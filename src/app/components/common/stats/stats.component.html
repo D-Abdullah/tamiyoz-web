@@ -1,0 +1,86 @@
+<div class="main-component">
+    <div class="col-lg-9 col-md-11 col-12 ps-md-4 mt-5 mb-5">
+        <div class="main-stats">
+            <span class="stats-title col-sm-9" data-aos="fade-left" data-aos-delay="0"
+              data-aos-duration="500" data-aos-offset="-200" data-aos-easing="ease-in-out" data-aos-mirror="true"
+              data-aos-once="true"
+              data-aos-anchor-placement="top-center">
+              {{'stats.title' | translate}}
+            </span>
+            <div class="background-rect" data-aos="fade-left"  data-aos-delay="0"
+              data-aos-duration="500" data-aos-offset="-200" data-aos-easing="ease-in-out" data-aos-mirror="true"
+              data-aos-once="true"
+              data-aos-anchor-placement="top-center">
+                <div class="col-sm-7 col-12 stats-area">
+                    <div class="stats-inner-area  pe-md-5 pe-2 ps-2 ps-md-5 col-12" >
+                        <div class="stats-block col-6">
+                          <div class="col-4">
+                            <img [src]="'assets/img/stats/management.png'" alt="">
+                          </div>
+                          <div class="col-8">
+                            <h6>
+                              {{'stats.stats1number' | translate}}
+                            </h6>
+                            
+                            <span>
+                              {{'stats.stats1' | translate}}
+                            </span>
+                          </div>
+                        </div>
+                        <div class="stats-block col-6">
+                          <div class="col-4">
+                            <img [src]="'assets/img/stats/coding.png'" alt="">
+                          </div>
+                          <div class="col-8">
+                            <h6>
+                              {{'stats.stats2number' | translate}}
+                            </h6>
+                            <span>
+                              {{'stats.stats2' | translate}}
+                            </span>
+                          </div>
+                        </div>
+                        <div class="stats-block col-6">
+                          <div class="col-4">
+                            <img [src]="'assets/img/stats/handshake.png'" alt="">
+                          </div>
+                          <div class="col-8">
+                            <h6>{{'stats.stats3number' | translate}}</h6>
+                            <span>
+                              {{'stats.stats3' | translate}}
+                            </span>
+                          </div>
+                        </div>
+                        <div class="stats-block col-6">
+                          <div class="col-4">
+                            <img [src]="'assets/img/stats/technical-suppo.png'" alt="">
+                          </div>
+                          <div class="col-8">
+                            <h6>
+                              {{'stats.stats4number' | translate}}
+                            </h6>
+                            <span>
+                              {{'stats.stats4' | translate}}
+                            </span>
+                          </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="circle-shadow"
+                  [ngClass]="direction == 'ltr' ? 'circle-direction-en' : 'circle-direction-ar'"></div>
+            </div>
+            <div class="" [ngClass]="direction == 'ltr' ? 'background-stats-image-en' : 'background-stats-image'">
+              <img [src]="'assets/img/stats/stats1.png'" class=""
+                data-aos="fade-right" data-aos-delay="0" data-aos-duration="500" data-aos-offset="-200"
+                data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+                data-aos-anchor-placement="top-center">
+            </div>
+            
+            
+        </div>
+
+    </div>
+    
+</div>
+<!-- <app-animated-digit [digit]="83" [duration]="1000"></app-animated-digit> -->

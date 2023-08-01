@@ -1,0 +1,188 @@
+// MEDIA QUERY BREAKING POINTS
+$small : 576px;
+$medium : 768px;
+$large : 992px;
+
+$breaking-point1 : 392px;
+
+a, a:hover, a:focus, a:active {
+      all: unset;   
+}
+
+::ng-deep .home-slider .owl-dots{
+   position: absolute;
+   bottom: 30px;
+   left: 165px;
+   @media only screen and (max-width: $medium) {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        // right: auto;
+   }
+ }
+
+::ng-deep .home-slider .owl-dots .owl-dot span {
+   background: #c7c7c7!important; /* dots color*/
+   transition: all 0.4s;
+ }
+
+::ng-deep .home-slider .owl-dot.active span {
+    background: #fff!important;
+   /*active and on hover color*/
+   width: 25px;
+   transition: all 0.4s;
+ }
+
+
+.slide-main {
+    height: 650px;
+    
+    
+    border: 1px solid #707070;
+    position: relative;
+    .home-slider {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 650px;
+        z-index: 1;
+        // z-index: -10;
+        img {
+            width: 100%;
+            height: 650px;
+            filter: brightness(.6);
+            object-fit: cover;
+            @media only screen and (max-width: $small) {
+                object-position: 10% bottom; 
+            }
+        }
+    }
+    .top-header-content {
+        width: 100%;
+        z-index: 100;
+        position: absolute;
+    }
+    .center-heading {
+        // padding-top: 40px;
+        color: white;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        margin-top: 260px;
+        position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // -webkit-transform: translate(-50%, -50%);
+        // transform: translate(-50%, -50%);
+        // text-align: center;
+        z-index: 2;
+        transition: all 0;
+        @media only screen and (max-width: 576px) {
+            // text-align: center;
+        }
+        // .read-more {
+        //     @media only screen and (max-width: 576px) {
+        //         display: flex;
+        //         justify-content: center;
+        //         align-items: center;
+        //     }
+        // }
+        h1 {
+            font-size: 54px;
+            left: 50%;
+            top: 50%;
+            font-weight: 600;
+        }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        // @media only screen and (max-width: $breaking-point1){
+        //     h1 {
+        //         font-size: 44px;
+        //     }
+        //     h2 {
+        //         font-size: 18px;
+        //         margin-bottom: 20px;
+        //         font-weight: 600;
+        //     }
+        // }
+        
+    }
+
+    .nav-title-en-mobile {
+        @media only screen and (max-width: $medium) {
+            left: 20px;
+        }
+    }
+    .nav-title-ar-mobile {
+        @media only screen and (max-width: $medium) {
+            right: 20px;
+        }
+        
+    }
+
+    .nav-title {
+        color: white;
+        margin: 300px auto 0;
+        
+        @media only screen and (max-width:$medium){
+            // margin: 100px auto 0;
+            width: 90%;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        
+        .main-nav-title {
+            font-size: 40px;
+            font-weight: var(--bold);
+        }
+        .bottom-nav-title {
+            display: flex;
+            flex-wrap: wrap;
+            .first-nav-title {
+                display: flex;
+                align-items: center;
+                font-size: 20px;
+                font-weight: var(--bold);
+                cursor: pointer;
+            }
+            .second-nav-title {
+                display: flex;
+                align-items: center;
+                font-size: 20px;
+                cursor: pointer;
+                
+            }
+            
+        }
+    }
+    
+}
+
+.home-active {
+    
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+    background-position: top;
+}
+.home-notactive {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../../assets/img/home/home5.png");
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 420px;
+    background-position: 0% 50%;
+    @media only screen and (max-width: $small){
+        height: 260px;
+        background-position: 20% 0%;
+        
+    }
+    
+}
+

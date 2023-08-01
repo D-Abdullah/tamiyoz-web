@@ -1,0 +1,130 @@
+{
+    "demo": {
+        "title": "Translation demo",
+        "text": "This is a simple demonstration app for ngx-translate"
+    },
+    "topsocial": {
+        "search-box-placeholder": "ادخل للبحث..."
+    },
+    "search": {
+        "title": "اخبرنا ما تبحث عنه...؟",
+        "sub-title": "اكتب ما تبحث عنه...",
+        "noresults": "لا يوجد نتائج.",
+        "companies": "الشركات",
+        "projects": "الاخبار",
+        "stations": "المشاريع"
+    },
+    "navbar": {
+        "Home": "الرئيسية",
+        "About_us": "من نحن",
+        "Our_services": "خدماتنا",
+        "Our_opportunities": "فرصنا الحالية",
+        "Projects": "الأخبار",
+        "Stations": "المشاريع",
+        "Marketing": "التسويق",
+        "Contact_us": "اتصل بنا"
+    },
+    "head": {
+        "Title": "تمـــــــيز العقارية",
+        "Description": "رواد في التسويق العقاري",
+        "Read_more": "إقرأ المزيد",
+        "showdetails": "عرض التفاصيل"
+        
+    },
+    "aboutus": {
+        
+        "Description": "تميز العقاريه هي كيان سعودي مرخص من قبل وزارة التجارة, لتسويق وادارة الاصول العقارية بكافة انواعها وادارة الاملاك ومتخصص في أنشطة الخدوات (محطات الوقود - المراكز التجاريه - مشاريع التطور السكني - الخ) الادارية المتكاملة للمكاتب. تتميز تميز العقارية في تقديم الاستشارات الإدارية والحلول  المتكاملة في جميع الخدمات المساندة بالإضافة الى التطوير الاستراتيجي وذلك بالتعاون مع شركاء إستراتيجين على المستوى المحلي والعالمي لتنفيذ جميع الخدمات حسب احتياج حسب إحتياج العميل. نفخر بتقديم الخدمة للقطاع العام والخاص." ,
+        "Vision": "الرؤية",
+        "Vision_text": "ان نكون الخيار الأول للمستثمرين وأصحاب المشاريع على المستوى الإقليمي والعربي والعالمي.",
+        "Message": "رسالتنا",
+        "Message_text": "السعي لوضع بصمة واضحة في تنمية المشاريع والاستثمارات والمحافظة عليها وتحقق اعلى عائدات ممكنة.",
+        "Target": "الهدف",
+        "Target_text": "ان نكون الخيار الأول للمستثمرين وأصحاب المشاريع على المستوى الإقليمي والعربي والعالمي."
+    },
+    "ourservices": {
+        "Description": "الخدمات التي تقدمها الشركة" ,
+        "ourservices1": "خدمات التسويق المباشر والالكتروني",
+        "ourservices2": "مشاريع التطوير العقاري السكني والتجاري",
+        "ourservices3": "إدارة الأصول والاملاك"
+    },
+    "projects": {
+        "Description": "بعض المشاريع التي أنجزناها" ,
+        "showall": "كافة المشاريع"
+    },
+    "partners":{
+        "title": "شركائنا",
+        "Description": "شركاء النجاح" 
+    },
+    "stats":{
+        "title": "شركة تميز العقارية بالأرقام",
+        "stats1": "المشاريع المنجزة",
+        "stats1number": "150",
+        "stats2": "موظف بالشركة",
+        "stats2number": "300",
+        "stats3": "العملاء الدائمين",
+        "stats3number": "100",
+        "stats4": "ساعات الدعم",
+        "stats4number": "80K"
+    },
+    "footer":{
+        "description": "تميز العقاريه هي كيان سعودي مرخص من قبل وزارة التجارة, للتسويق وادارة الاصول العقارية بكافة انواعها (محطات الوقود - المراكز التجاريه - مشاريع التطور السكني)",
+        "bottomtext1": "جميع الحقوق محفوظة شركة",
+        "bottomtext2": "تميز العقارية",
+        "address": "جدة-المملكة العربية السعودية- المركز الرئيسي شارع فلسطين",
+        "chat-bubble": "تواصل معنا"
+    },
+    "station":{
+        "location": "الموقع",
+        "downloadfile": "تحميل ملف",
+        "state1": "متاح",
+        "state2": "محجوز",
+        "reserve": "طلب حجز",
+        "modaltitle": "طلب حجز",
+        "modaldescription": "يسعدنا تلقي طلبكم",
+        "modalActivityType": "السجل التجاري (اجباري)",
+        "modalActivityType1": "نوع النشاط (اجباري)",
+        "modalname": "اسم النشاط (اجباري)",
+        "modalphone": "رقم الهاتف (اجباري)",
+        "modalemail": "البريد الالكتروني (اجباري)",
+        "modalpropertyname": "إسم المنشأة",
+        "modalduration": "مدة الاستئجار / سنة",
+        "modaltext": "ملاحظات الطلب",
+        "modalcancel": "إلغاء",
+        "modalsubmit": "طلب حجز",
+        "modal-validation-name": "يجب إدخال اسم النشاط.",
+        "modal-validation-phone": "يجب إدخال رقم الهاتف.",
+        "modal-validation-duration": "يجب إدخال مدة الاستئجار.",
+        "modal-validation-propertyname": "يجب إدخال إسم المنشأة.",
+        "modal-validation-email": "يجب إدخال بريد إلكتروني صحيح.",
+        "modal-validation-activity-type": "يجب إدخال السجل التجاري.",
+        "modal-validation-activity-type1": "يجب إدخال نوع النشاط.",
+        "availableshops" : "المحلات المتاحة",
+        "map-modal-show-location": "إظهر الخريطة كاملة",
+        "modal-terms" : "اوافق على الشروط والأحكام.",
+        "modal-validation-terms": "يجب الموافقة على الشروط والأحكام.",
+        "modal-tooltip-terms": "تعرف على الشروط والأحكام",
+        "show-available-shops": "إظهار المحلات المتاحة",
+        "show-all-stations": "إظهار كافة المشاريع",
+        "Choose Available Stations": "إختر المحطات المتاحة."
+    },
+    "contactus":{
+        "title": "تواصل معنا",
+        "description": "يسعدنا تلقى رسائلكم",
+        "contactname": "الإسم",
+        "contactemail": "البريد الالكتروني",
+        "contactphone": "رقم الهاتف",
+        "contactmessage": "نص الرسالة",
+        "contactsend": "إرسال الرسالة"
+    },
+    "shop":{
+        "reservenow": "طلب حجز",
+        "reservestate1": "المحل غير مستأجر",
+        "reservestate2": "المحل مستأجر"
+    },
+    "nocontent":{
+        "allopportunities": "لا يوجد فرص حالية.",
+        "news": "لا يوجد أخبار الأن.",
+        "terms": "الشروط والأحكام"
+    }
+}
+

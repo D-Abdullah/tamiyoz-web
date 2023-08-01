@@ -1,0 +1,25 @@
+// MEDIA QUERY BREAKING POINTS
+$small : 576px;
+$medium : 768px;
+$large : 992px;
+
+@import "../../common/projects/projects.component.scss";
+
+.projects-main {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @media only screen and (max-width: $small) {
+        justify-content: center;
+    }
+    .project-block {
+        width: 213px;
+        height: 334px;
+        margin: 0;
+        margin-inline-end: 20px;
+        margin-bottom: 20px;
+        @media only screen and (max-width: $small) {
+            width: 95%;
+            margin-inline-end: 0;
+        }
+    }
+}

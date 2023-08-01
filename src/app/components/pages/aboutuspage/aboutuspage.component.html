@@ -1,0 +1,79 @@
+<div class="w-100 d-flex align-items-center flex-column background-main-color">
+  <div class="col-lg-9 col-md-11 col-12 mt-5">
+    <div class="about-main">
+      <span>{{responseData.title}}</span>
+      <h1>{{responseData.sub_title}}</h1>
+      <p [innerHtml]="responseData.description">
+      </p>
+      
+
+
+    </div>
+  </div>
+  <div class="col-lg-9 col-md-11 col-12 mt-4 d-flex flex-wrap justify-content-between">
+
+
+
+    <div class="about-block1">
+
+      <div class="about-block-text-box">
+        <span>
+          <i class='bx bx-show'></i>
+        </span>
+        <h3>{{'aboutus.Vision' | translate}}</h3>
+        <p>
+          {{'aboutus.Vision_text' | translate}}
+        </p>
+      </div>
+      <div class="overlay"></div>
+
+    </div>
+
+
+    <div class="about-block2">
+      <div class="about-block-text-box">
+        <span>
+          <i class='bx bx-message-square'></i>
+
+
+        </span>
+        <h3>{{'aboutus.Message' | translate}}</h3>
+        <p>
+          {{'aboutus.Message_text' | translate}}
+        </p>
+      </div>
+      <div class="overlay"></div>
+
+
+
+    </div>
+
+
+    <div class="about-block3">
+      <div class="about-block-text-box ">
+        <span>
+          <i class='bx bx-bullseye'></i>
+        </span>
+        <h3>{{'aboutus.Target' | translate}}</h3>
+        <p>
+          {{'aboutus.Target_text' | translate}}
+        </p>
+      </div>
+      <div class="overlay"></div>
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+
+</div>
+
+<app-partners></app-partners>
+
+

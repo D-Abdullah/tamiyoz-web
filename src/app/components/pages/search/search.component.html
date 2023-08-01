@@ -1,0 +1,102 @@
+<div class="main-component" style="background-color: #f7f7f7;">
+    <div class="col-md-11 col-lg-9 col-12 mt-5">
+        <div class="search-header">
+            <div class="search-header-title">
+                <span>{{'search.title' | translate}}</span>
+            </div>
+            <div class="search-header-bar">
+                <input type="text" (keyup.enter)="searchEnterKey()" [(ngModel)]="searchName"
+                  placeholder="{{'search.sub-title' | translate}}">
+                <!-- <a href="/search/{{searchName}}"> -->
+                    <div class="search-header-bar-submit" (click)="searchEnterKey()">
+                      <i class='bx ' [ngClass]="direction == 'ltr' ? 'bx-chevron-right' : 'bx-chevron-left'"></i>
+                    </div>
+                <!-- </a> -->
+                
+            </div>
+
+        </div>
+
+        <div class="search-no-results" *ngIf="resultCheck()">
+            <span>{{'search.noresults' | translate}}</span>
+        </div>
+
+        <div class="category-block" *ngIf="companiesResults.length != 0">
+            <div class="category-title">
+                <span>{{'search.companies' | translate}}</span>
+            </div>
+            <div class="category-body">
+                <div class="projects-main">
+                  <div class="project-block" routerLink="/company/{{result.id}}"
+                    *ngFor="let result of companiesResults"
+                    data-aos="fade-up" data-aos-offset="-200" data-aos-delay="0" data-aos-duration="500"
+                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+                    data-aos-anchor-placement="top-center">
+                    <img [src]="imageUrl+result.img" alt="">
+                    <div class="text-block">
+                      <span>{{result.name}}</span>
+                      <p>
+                        {{result.description |  truncate : 60 }}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-block" *ngIf="stationsResults.length != 0">
+            <div class="category-title">
+                <span>{{'search.stations' | translate}}</span>
+            </div>
+            <div class="category-body">
+                <div class="projects-main">
+                  <div class="project-block" routerLink="/project-page/{{result.id}}"
+                    *ngFor="let result of stationsResults"
+                    data-aos="fade-up" data-aos-offset="-200" data-aos-delay="0" data-aos-duration="500"
+                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+                    data-aos-anchor-placement="top-center">
+                    <img [src]="imageUrl+result.img" alt="">
+                    <div class="text-block">
+                      <span>{{result.name}}</span>
+                      <p>
+                        {{result.description |  truncate : 60 }}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="category-block" *ngIf="projectsResults.length != 0">
+            <div class="category-title">
+                <span>{{'search.projects' | translate}}</span>
+            </div>
+            <div class="category-body">
+                <div class="projects-main">
+                  <div class="project-block" routerLink="/news-page/{{result.id}}"
+                    *ngFor="let result of projectsResults"
+                    data-aos="fade-up" data-aos-offset="-200" data-aos-delay="0" data-aos-duration="500"
+                    data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+                    data-aos-anchor-placement="top-center">
+                    <img [src]="imageUrl+result.img" alt="">
+                    <div class="text-block">
+                      <span>{{result.name}}</span>
+                      <p>
+                        {{result.description |  truncate : 60 }}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        
+    </div>
+
+
+
+</div>
+<app-partners></app-partners>

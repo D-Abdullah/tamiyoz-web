@@ -1,0 +1,48 @@
+<div class="main-component pb-3" style="background-image: url('/assets/img/projects/projectspattern.png');">
+    <div class="col-lg-9 col-12 mt-5 mb-5">
+        <div class="section-title" data-aos="fade-down" data-aos-delay="0" data-aos-offset="-200"
+          data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+          data-aos-anchor-placement="top-center">
+          <span>{{'navbar.Stations' | translate}}</span>
+          <p>{{'projects.Description' | translate}}</p>
+        </div>
+
+        <div class="project-carousel" data-aos="fade-up" data-aos-delay="0" data-aos-offset="-200"
+          data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+          data-aos-anchor-placement="top-center" style="position: relative;">
+            <owl-carousel-o [options]="projectOptions">
+
+              <ng-container *ngFor="let station of responseData">
+                <ng-template carouselSlide>
+                  <div class="projects-main">
+                    <div class="project-block" routerLink="/project-page/{{station.id}}">
+                      <img [src]="imageUrl+station.img" alt="">
+                      <div class="text-block">
+                        <span>
+                          {{station.name}}
+                        </span>
+                        <p>
+                          {{station.description |  truncate : 60 }}
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                </ng-template>
+              </ng-container>
+
+            </owl-carousel-o>
+            <div class="showall-button ms-lg-4 ms-4" [routerLink]="['/projects']"
+              style="position:absolute; bottom:-70px; left:0;">
+              <span>{{'projects.showall' | translate}}</span>
+            </div>
+        </div>
+        
+
+        
+
+    </div>
+
+</div>

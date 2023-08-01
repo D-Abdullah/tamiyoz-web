@@ -1,0 +1,255 @@
+<div class="main-component" style="background-color: #f7f7f7;">
+  <div class="col-md-11 col-lg-9 col-12 mt-5">
+    <div class="top-button-show-shops-layout">
+      <div class="title-main-top">
+        <h1 *ngIf="!showAvailableShopsLayout" data-aos="fade-right" data-aos-offset="-200" data-aos-delay="0"
+          data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+          data-aos-anchor-placement="top-center">
+          {{'projects.showall' | translate}}
+        </h1>
+        <h1 *ngIf="showAvailableShopsLayout" data-aos="fade-right" data-aos-offset="-200" data-aos-delay="0"
+          data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+          data-aos-anchor-placement="top-center">
+          {{'station.availableshops' | translate}}
+        </h1>
+      </div>
+
+      <div class="dropdown-stations" *ngIf="showAvailableShopsLayout" data-aos="fade-up" data-aos-offset="-200"
+        data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true"
+        data-aos-once="true" data-aos-anchor-placement="top-center">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block" [autoClose]="'outside'"
+            placement="{{commonService.lang == 'ar' ? 'bottom-right' : 'bottom-left'}}">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+              {{'station.Choose Available Stations' | translate}}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-list">
+              <button class="single-dropdown-item" ngbDropdownItem
+                *ngFor="let stationTitle of allStationsWithAvailableShopsTitles; let index = index">
+                <input type="checkbox" id="{{'title' + index}}"
+                  (change)="checkAvailableStations($event, stationTitle)">
+                <label for="{{'title' + index}}" class="dropdown-menu-item-title">
+                  <span>
+                    {{stationTitle.stationName}}
+                  </span>
+                </label>
+                
+              </button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div class="read-more-button" (click)="toggleAvailableShopsLayout()">
+        <span *ngIf="!showAvailableShopsLayout">{{ 'station.show-available-shops' | translate }}</span>
+        <span *ngIf="showAvailableShopsLayout">{{ 'station.show-all-stations' | translate }}</span>
+      </div>
+    </div>
+
+    <div class="projects-main" *ngIf="!showAvailableShopsLayout">
+      <div class="project-block-layout" *ngFor="let station of responseData">
+        <div class="project-block" routerLink="/project-page/{{station.id}}"
+          data-aos="fade-up" data-aos-offset="-200" data-aos-delay="0"
+          data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="true"
+          data-aos-anchor-placement="top-center">
+          <img [src]="imageUrl+station.img" alt="">
+          <div class="text-block">
+            <span>{{station.name}}</span>
+            <p>
+              {{station.description |  truncate : 60 }}
+            </p>
+          </div>
+
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="available-shops-layout" *ngIf="showAvailableShopsLayout" data-aos="fade-up" data-aos-offset="-200"
+      data-aos-delay="0" data-aos-duration="500" data-aos-easing="ease-in-out" data-aos-mirror="true"
+      data-aos-once="true" data-aos-anchor-placement="top-center">
+      <div class="single-station-layout"
+        *ngFor="let station of allStationsWithAvailableShops">
+        <div class="station-title">
+          <a routerLink="/project-page/{{station.station_id}}">
+            <h2>
+              {{station.stationName}}
+            </h2>
+          </a>
+          
+          
+        </div>
+        <div class="station-available-shops-layout">
+
+
+          <div class="projects-main " *ngFor="let shop of station.shops"
+            [style.direction]="commonService.getDirection()">
+            <div class="project-block ">
+              <img [src]="shopsService.shopImageUrl+shop.img" alt="" routerLink="/shop/{{shop.id}}">
+              <div class="text-block">
+                <span routerLink="/shop/{{shop.id}}">
+                  {{shop.shopName}}
+                </span>
+                <!-- <p routerLink="/shop/{{shop.station_id}}">
+                  {{shop.description  |  truncate : 50 }}
+                </p> -->
+              </div>
+              <div class="reserve-buttons">
+                <div class="reserve-stats" routerLink="/shop/{{shop.id}}"
+                  [ngClass]="shop.shopStutas == '0' ? 'reserve-stats-0' : 'reserve-stats-1'">
+                  <span *ngIf="shop.shopStutas == '1'">
+                    {{'station.state2' | translate}}
+                  </span>
+                  <span *ngIf="shop.shopStutas == '0'">
+                    {{'station.state1' | translate}}
+                  </span>
+
+                </div>
+                <div *ngIf="shop.shopStutas == '0'" class="reserve-now" (click)="open(content, shop.shopName, shop.id)">
+                  <span>{{'station.reserve' | translate}}</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+<app-partners></app-partners>
+
+
+<ng-template #content let-modal>
+  <div class="modal1" [style.direction]="commonService.getDirection()">
+    <div class="modal-header1">
+      <div class="modal-title-main">
+
+        <span>
+          {{'station.modaltitle' | translate}}
+        </span>
+        <div class="close-button" (click)="modal.close('Ok click')">
+          <i class='bx bx-x'></i>
+        </div>
+      </div>
+      <div class="modal-title-description">
+        <span>
+          {{'station.modaldescription' | translate}}
+        </span>
+      </div>
+    </div>
+    <form [formGroup]="formValue">
+      <div class="modal-body1">
+
+        <div class="form-single">
+          <input type="text" value="{{propertyName}}" formControlName="propertyname"
+            placeholder="{{'station.modalpropertyname' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalPropertyNameIsValid == false">
+          {{'station.modal-validation-propertyname' | translate}}
+        </span>
+
+        <div class="form-single">
+          <input type="number" formControlName="duration" placeholder="{{'station.modalduration' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalDurationIsValid == false">
+          {{'station.modal-validation-duration' | translate}}
+        </span>
+
+        <div class="form-single">
+          <input type="text" formControlName="registration_no"
+            placeholder="{{'station.modalActivityType' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalRegistrationNoIsValid == false">
+          {{'station.modal-validation-activity-type' | translate}}
+        </span>
+
+
+        <div class="form-single">
+          <input type="text" formControlName="activityType" placeholder="{{'station.modalActivityType1' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalActivityTypeIsValid == false">
+          {{'station.modal-validation-activity-type1' | translate}}
+        </span>
+
+
+        <div class="form-single">
+          <input type="text" formControlName="name" placeholder="{{'station.modalname' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalNameIsValid == false">
+          {{'station.modal-validation-name' | translate}}
+        </span>
+
+
+        <div class="form-single phone-number">
+          <input type="number" formControlName="phone" placeholder="{{'station.modalphone' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalPhoneIsValid == false">
+          {{'station.modal-validation-phone' | translate}}
+        </span>
+
+        <div class="form-single">
+          <input type="email" formControlName="email" placeholder="{{'station.modalemail' | translate}}">
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalEmailIsValid == false">
+          {{'station.modal-validation-email' | translate}}
+        </span>
+
+
+        <div class="form-wide">
+          <textarea type="text" formControlName="comment" placeholder="{{'station.modaltext' | translate}}"></textarea>
+        </div>
+
+        <div class="form-checkbox">
+          <input type="checkbox" id="terms" formControlName="terms" value="Bike">
+          <label for="terms">{{'station.modal-terms' | translate}}</label><br>
+
+          <div class="terms-goto">
+            <a href="/terms" target="_blank" style="cursor: pointer;">
+              <i class='bx bxs-error-circle' placement="top" ngbTooltip="{{'station.modal-tooltip-terms' | translate}}">
+              </i>
+            </a>
+
+          </div>
+        </div>
+        <span class=" d-block text-danger" style="font-size: 14px;" *ngIf=" modalTermsIsValid == false">
+          {{'station.modal-validation-terms' | translate}}
+        </span>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
+
+      <div class="modal-footer1">
+        <div class="showall-button" (click)="checkModalValidation()">
+          <span>
+            {{'station.modalsubmit' | translate}}
+          </span>
+        </div>
+        <div class="cancel-modal-button border-test2" (click)="modal.close('Ok click')">
+          <span>
+            {{'station.modalcancel' | translate}}
+          </span>
+        </div>
+      </div>
+    </form>
+
+  </div>
+</ng-template>

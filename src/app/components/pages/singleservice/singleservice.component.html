@@ -1,0 +1,16 @@
+<div class="main-component">
+    <div class="col-md-11 col-lg-9 col-12 mt-5 mb-5 d-flex flex-wrap">
+        <div class="single-service-img col-lg-6 col-12">
+            <img [src]="imageUrl+responseData.img" alt="">
+        </div>
+        <div class="single-service-text-block col-lg-6 col-12">
+            <span>
+                {{responseData.name}}
+            </span>
+            <p [innerHtml]="responseData.description">
+                
+            </p>
+        </div>
+
+    </div>
+</div>
